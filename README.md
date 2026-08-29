@@ -37,13 +37,13 @@
 ## 📊 Статистика, которая говорит сама за себя
 
 ### Активность на GitHub
-Сервис для показа карточек лёг
+![GitHub stats](https://github-readme-stats-kohl-xi.vercel.app/api?username=justbedwarsplay&show_icons=true&theme=gruvbox)
 
 ### Языки, которые я использую чаще всего
-Сервис для показа карточек лёг
+![Top Langs](https://github-readme-stats-kohl-xi.vercel.app/api/top-langs/?username=justbedwarsplay&layout=compact&theme=gruvbox)
 
 ### Детальный профиль
-Сервис для показа карточек лёг
+![Profile details](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=justbedwarsplay&theme=gruvbox)
 
 ### Статистика по репозиториям
 | Показатель | Значение |
