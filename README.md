@@ -37,10 +37,10 @@
 ## 📊 Статистика, которая говорит сама за себя
 
 ### Активность на GitHub
-![GitHub stats](https://github-readme-stats-kohl-xi.vercel.app/api?username=justbedwarsplay&show_icons=true&theme=gruvbox)
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=justbedwarsplay&show_icons=true&theme=gruvbox&bg_color=0d1117&border_color=2d8a4e&icon_color=2d8a4e&title_color=4caf50&text_color=c9d1d9)
 
 ### Языки, которые я использую чаще всего
-![Top Langs](https://github-readme-stats-kohl-xi.vercel.app/api/top-langs/?username=justbedwarsplay&layout=compact&theme=gruvbox)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=justbedwarsplay&layout=compact&theme=gruvbox&bg_color=0d1117&border_color=2d8a4e&title_color=4caf50&text_color=c9d1d9)
 
 ### Детальный профиль
 ![Profile details](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=justbedwarsplay&theme=gruvbox)
