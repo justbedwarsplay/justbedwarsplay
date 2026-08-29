@@ -2,40 +2,45 @@ name: Update GitHub Stats
 
 on:
   schedule:
-    # Запуск каждый день в 00:00 по UTC
-    - cron: '0 0 * * *'
-  # Возможность запустить вручную из вкладки Actions
-  workflow_dispatch:
+    - cron: '0 0 * * *'  # Каждый день в 00:00
+  workflow_dispatch:      # Ручной запуск
 
 jobs:
-  update-readme:
+  update-stats:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Генерация файла со статистикой (активность)
+      # Генерация статистики активности
       - name: Generate stats image
         uses: cicirello/user-statistician@v1
         with:
-          organization: 'justbedwarsplay'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          generated-stats-file: 'github-stats.svg'
+          image-file: 'github-stats.svg'
+          include-title: true
+          custom-title: 'Активность на GitHub'
+          colors: '["#2d8a4e", "#4caf50", "#81c784"]'
+          hide-keys: false
+          commit-and-push: false
+          locale: 'ru'
 
-      # Генерация файла с топом языков
+      # Генерация топа языков (отдельный запуск)
       - name: Generate top languages image
         uses: cicirello/user-statistician@v1
         with:
-          organization: 'justbedwarsplay'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          generated-stats-file: 'top-langs.svg'
-          statistic: 'languages'
+          image-file: 'top-langs.svg'
+          include-title: true
+          custom-title: 'Топ языков программирования'
+          colors: '["#2d8a4e", "#4caf50", "#81c784"]'
+          hide-keys: false
+          commit-and-push: false
+          locale: 'ru'
 
-      # Коммит и пуш изменений обратно в репозиторий
+      # Коммит и пуш изменений
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add github-stats.svg top-langs.svg
-          git diff --staged --quiet || git commit -m "Автоматическое обновление статистики"
+          git diff --staged --quiet || git commit -m "Автоматическое обновление статистики [skip ci]"
           git push
