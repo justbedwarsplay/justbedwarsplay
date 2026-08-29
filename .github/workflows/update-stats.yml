@@ -2,17 +2,18 @@ name: Update GitHub Stats
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Каждый день в 00:00
-  workflow_dispatch:      # Ручной запуск
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   update-stats:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Генерация статистики активности
       - name: Generate stats image
         uses: cicirello/user-statistician@v1
         with:
@@ -24,7 +25,6 @@ jobs:
           commit-and-push: false
           locale: 'ru'
 
-      # Генерация топа языков (отдельный запуск)
       - name: Generate top languages image
         uses: cicirello/user-statistician@v1
         with:
@@ -36,7 +36,6 @@ jobs:
           commit-and-push: false
           locale: 'ru'
 
-      # Коммит и пуш изменений
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
